@@ -3,6 +3,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+button,
+a {
+  cursor: pointer;
+}
+
 @theme {
   --header-height: 48px
 }
