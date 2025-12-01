@@ -14,6 +14,16 @@ export interface TableField {
   id: string;
   name: string;
   type: string;
+  options: TableFieldOptions;
+}
+
+export interface TableFieldOptions {
+  choices: TableFieldChoice[];
+}
+
+export interface TableFieldChoice {
+  id: string;
+  name: string;
 }
 
 export interface Form {

@@ -164,9 +164,7 @@ const FormEdit = () => {
               <p>
                 {q.label} ({q.type}) {q.required ? '(Required)' : ''}
               </p>
-              {q.conditionalRules && (
-                <p className="text-sm">Conditional: {JSON.stringify(q.conditionalRules)}</p>
-              )}
+              {q.conditionalRules && <p className="text-sm overflow-auto">Conditional: YES</p>}
             </div>
           ))}
         </div>
