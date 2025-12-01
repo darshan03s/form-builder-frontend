@@ -9,6 +9,7 @@ import {
 import { API_BASE_URL } from '@/config';
 import { useUser } from '@/hooks';
 import type { Form } from '@/types';
+import { ExternalLink } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
@@ -57,6 +58,7 @@ const MyForms = () => {
             <TableHead className="text-center">Form ID</TableHead>
             <TableHead className="text-center">Base ID</TableHead>
             <TableHead className="text-center">Table ID</TableHead>
+            <TableHead className="text-center">See</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -67,6 +69,11 @@ const MyForms = () => {
               </TableCell>
               <TableCell className="font-medium text-center">{form.airtableBaseId}</TableCell>
               <TableCell className="text-center">{form.airtableTableId}</TableCell>
+              <TableCell className="text-center">
+                <Link to={`/form/${form._id}`}>
+                  <ExternalLink className='size-4' />
+                </Link>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

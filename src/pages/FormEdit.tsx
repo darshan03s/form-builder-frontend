@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -21,9 +21,9 @@ import type {
   Table,
   TableField
 } from '@/types';
-import { Plus, Trash2 } from 'lucide-react';
+import { ExternalLink, Plus, Trash2 } from 'lucide-react';
 import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { toast } from 'sonner';
 import {
   Dialog,
@@ -154,9 +154,17 @@ const FormEdit = () => {
         </div>
         <div className="py-3 border-b flex items-center justify-between">
           <span className="font-semibold">Add questions</span>
-          <Button size={'icon-sm'} onClick={() => setIsNewQuestionModal(true)}>
-            <Plus />
-          </Button>
+          <div className="flex items-center gap-2">
+            <Link
+              to={`/form/${formId}`}
+              className={buttonVariants({ variant: 'outline', size: 'icon-sm' })}
+            >
+              <ExternalLink size={4} />
+            </Link>
+            <Button size={'icon-sm'} onClick={() => setIsNewQuestionModal(true)}>
+              <Plus />
+            </Button>
+          </div>
         </div>
         <div className="flex flex-col gap-2">
           {questions.map((q, i) => (
