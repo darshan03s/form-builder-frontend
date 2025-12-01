@@ -22,7 +22,7 @@ export interface Form {
   airtableTableId: string;
   createdAt: string;
   owner: string;
-  questions: unknown[];
+  questions: Question[];
 }
 
 export type Operator = 'equals' | 'notEquals' | 'contains';
