@@ -7,6 +7,7 @@ import { API_BASE_URL } from './config';
 import { useUser } from './hooks';
 import FormEdit from './pages/FormEdit';
 import MyForms from './pages/MyForms';
+import Form from './pages/Form';
 
 const App = () => {
   const navigate = useNavigate();
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/auth/signin" element={<Signin />} />
           <Route path="/my-forms" element={<MyForms />} />
           <Route path="/form/:formId/edit" element={<FormEdit />} />
+          <Route path="/form/:formId" element={<Form />} />
         </Routes>
       </div>
     </div>
