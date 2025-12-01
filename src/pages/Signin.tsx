@@ -21,9 +21,10 @@ const Signin = () => {
     if (success) {
       const userId = searchParams.get('userId')!;
       const email = searchParams.get('email')!;
+      const accessToken = searchParams.get('accessToken')!;
 
-      updateUserContext({ userId, email });
-      localStorage.setItem('airtableUserId', userId);
+      updateUserContext({ userId, email, accessToken });
+      localStorage.setItem('formBuilderUserId', userId);
 
       navigate('/');
     }

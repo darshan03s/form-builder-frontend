@@ -3,6 +3,7 @@ import { createContext } from 'react';
 export type User = {
   userId: string;
   email: string;
+  accessToken: string;
 };
 
 type UserContextType = {

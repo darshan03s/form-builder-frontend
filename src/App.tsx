@@ -5,16 +5,22 @@ import Signin from './pages/Signin';
 import { useEffect } from 'react';
 import { API_BASE_URL } from './config';
 import { useUser } from './hooks';
+import FormEdit from './pages/FormEdit';
+import MyForms from './pages/MyForms';
 
 const App = () => {
   const navigate = useNavigate();
   const { updateUserContext } = useUser();
 
   useEffect(() => {
-    const userId = localStorage.getItem('airtableUserId');
+    const userId = localStorage.getItem('formBuilderUserId');
 
     if (userId) {
-      fetch(API_BASE_URL + `/auth/verify?userId=${userId}`).then((res) => {
+      fetch(API_BASE_URL + `/auth/verify`, {
+        headers: {
+          'X-User-Id': userId
+        }
+      }).then((res) => {
         if (res.status === 401) {
           navigate('/auth/signin');
         } else {
@@ -36,6 +42,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/auth/signin" element={<Signin />} />
+          <Route path="/my-forms" element={<MyForms />} />
+          <Route path="/form/:formId/edit" element={<FormEdit />} />
         </Routes>
       </div>
     </div>

@@ -4,7 +4,8 @@ import { UserContext, type User } from './user-context';
 export const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User>({
     userId: '',
-    email: ''
+    email: '',
+    accessToken: ''
   });
   const [loadingUser, setLoadingUser] = useState(true);
 

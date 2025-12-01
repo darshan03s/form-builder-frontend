@@ -11,8 +11,8 @@ const Header = () => {
   const isAuthPage = location.pathname.includes('auth');
 
   function handleLogout() {
-    localStorage.removeItem('airtableUserId');
-    updateUserContext({ userId: '', email: '' });
+    localStorage.removeItem('formBuilderUserId');
+    updateUserContext({ userId: '', email: '', accessToken: '' });
     navigate('/auth/signin');
   }
 
@@ -21,19 +21,22 @@ const Header = () => {
       <Link to={'/'}>Form Builder</Link>
       <div>
         {loadingUser ? null : user.userId ? (
-          <Popover>
-            <PopoverTrigger>
-              <Button asChild variant={'outline'} size={'icon'}>
-                <User className="h-8 w-8 p-1" />
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="mr-4">
-              <div className="flex flex-col gap-4">
-                <span className="text-xs text-center">{user.email}</span>
-                <Button onClick={handleLogout}>Logout</Button>
-              </div>
-            </PopoverContent>
-          </Popover>
+          <div className="flex items-center gap-4">
+            <Link to={'/my-forms'}>My Forms</Link>
+            <Popover>
+              <PopoverTrigger>
+                <Button asChild variant={'outline'} size={'icon'}>
+                  <User className="h-8 w-8 p-1" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="mr-4">
+                <div className="flex flex-col gap-4">
+                  <span className="text-xs text-center">{user.email}</span>
+                  <Button onClick={handleLogout}>Logout</Button>
+                </div>
+              </PopoverContent>
+            </Popover>
+          </div>
         ) : isAuthPage ? null : (
           <Link to="/auth/signin" className={buttonVariants({ variant: 'default', size: 'sm' })}>
             Sign In
