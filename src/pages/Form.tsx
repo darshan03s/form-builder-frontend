@@ -120,7 +120,7 @@ const Form = () => {
 
   useEffect(() => {
     if (loadingUser) return;
-    fetch(import.meta.env.API_BASE_URL + `/forms/${formId}`, {
+    fetch(import.meta.env.VITE_API_BASE_URL + `/forms/${formId}`, {
       headers: {
         'X-User-Id': user.userId
       }
@@ -212,7 +212,7 @@ const Form = () => {
     });
 
     try {
-      const response = await fetch(`${import.meta.env.API_BASE_URL}/forms/${formId}/submit`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/forms/${formId}/submit`, {
         method: 'POST',
         headers: {
           'X-User-Id': user.userId

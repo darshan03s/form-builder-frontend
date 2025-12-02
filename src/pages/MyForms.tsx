@@ -21,7 +21,7 @@ const MyForms = () => {
     if (loadingUser) return;
 
     try {
-      fetch(import.meta.env.API_BASE_URL + '/forms', {
+      fetch(import.meta.env.VITE_API_BASE_URL + '/forms', {
         headers: {
           'X-User-Id': user.userId
         }

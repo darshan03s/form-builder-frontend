@@ -41,7 +41,7 @@ const FormResponses = () => {
   useEffect(() => {
     if (loadingUser || !formId) return;
 
-    fetch(`${import.meta.env.API_BASE_URL}/forms/${formId}/responses`, {
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/forms/${formId}/responses`, {
       headers: {
         'X-User-Id': user.userId
       }

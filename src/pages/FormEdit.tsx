@@ -83,7 +83,7 @@ const FormEdit = () => {
   useEffect(() => {
     if (loadingUser) return;
     try {
-      fetch(import.meta.env.API_BASE_URL + `/forms/${formId}`, {
+      fetch(import.meta.env.VITE_API_BASE_URL + `/forms/${formId}`, {
         headers: {
           'X-User-Id': user.userId
         }
@@ -122,7 +122,7 @@ const FormEdit = () => {
 
   const saveForm = async () => {
     try {
-      const res = await fetch(import.meta.env.API_BASE_URL + `/forms/${formId}`, {
+      const res = await fetch(import.meta.env.VITE_API_BASE_URL + `/forms/${formId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

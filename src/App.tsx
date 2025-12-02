@@ -17,7 +17,7 @@ const App = () => {
     const userId = localStorage.getItem('formBuilderUserId');
 
     if (userId) {
-      fetch(import.meta.env.API_BASE_URL + `/auth/verify`, {
+      fetch(import.meta.env.VITE_API_BASE_URL + `/auth/verify`, {
         headers: {
           'X-User-Id': userId
         }

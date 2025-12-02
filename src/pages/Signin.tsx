@@ -30,7 +30,7 @@ const Signin = () => {
   }, [searchParams, navigate]);
 
   const handleSignIn = () => {
-    window.location.href = `${import.meta.env.API_BASE_URL}/auth/airtable`;
+    window.location.href = `${import.meta.env.VITE_API_BASE_URL}/auth/airtable`;
   };
 
   return (

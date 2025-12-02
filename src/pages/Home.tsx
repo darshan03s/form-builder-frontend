@@ -117,7 +117,7 @@ const CreateFormModal = ({ open, setOpen }: CreateFormModalProps) => {
 
   async function handleCreateForm() {
     try {
-      const res = await fetch(import.meta.env.API_BASE_URL + '/forms', {
+      const res = await fetch(import.meta.env.VITE_API_BASE_URL + '/forms', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
