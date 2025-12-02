@@ -1,5 +1,8 @@
 # Form Builder
 
+[![Watch the demo](https://res.cloudinary.com/dqzusd5rw/image/upload/v1764669218/Screenshot_2025-12-02_152237_jw8rvh.png)](https://res.cloudinary.com/dqzusd5rw/video/upload/v1764668862/form_builder_demo_2_dg9t4y.mp4)
+
+
 A React + TypeScript + Vite application that lets authenticated Airtable users:
 
 * Sign in using Airtable OAuth (handled by backend).
