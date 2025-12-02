@@ -14,6 +14,8 @@ const App = () => {
   const navigate = useNavigate();
   const { updateUserContext } = useUser();
 
+  console.log({ API_BASE_URL });
+
   useEffect(() => {
     const userId = localStorage.getItem('formBuilderUserId');
 
