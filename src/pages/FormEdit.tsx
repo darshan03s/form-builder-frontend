@@ -21,7 +21,7 @@ import type {
   Table,
   TableField
 } from '@/types';
-import { Eye, Plus, Trash2 } from 'lucide-react';
+import { ExternalLink, Eye, Plus, Trash2 } from 'lucide-react';
 import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { toast } from 'sonner';
@@ -156,12 +156,24 @@ const FormEdit = () => {
           <span className="font-semibold">Add questions</span>
           <div className="flex items-center gap-2">
             <Link
+              title="See form"
               to={`/form/${formId}`}
               className={buttonVariants({ variant: 'outline', size: 'icon-sm' })}
             >
               <Eye size={4} />
             </Link>
-            <Button size={'icon-sm'} onClick={() => setIsNewQuestionModal(true)}>
+            <Link
+              title="See responses"
+              to={`/form/${formId}/responses`}
+              className={buttonVariants({ variant: 'outline', size: 'icon-sm' })}
+            >
+              <ExternalLink size={4} />
+            </Link>
+            <Button
+              title="Add new question"
+              size={'icon-sm'}
+              onClick={() => setIsNewQuestionModal(true)}
+            >
               <Plus />
             </Button>
           </div>

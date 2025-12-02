@@ -8,6 +8,7 @@ import { useUser } from './hooks';
 import FormEdit from './pages/FormEdit';
 import MyForms from './pages/MyForms';
 import Form from './pages/Form';
+import FormResponses from './pages/FormResponses';
 
 const App = () => {
   const navigate = useNavigate();
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/my-forms" element={<MyForms />} />
           <Route path="/form/:formId/edit" element={<FormEdit />} />
           <Route path="/form/:formId" element={<Form />} />
+          <Route path="/form/:formId/responses" element={<FormResponses />} />
         </Routes>
       </div>
     </div>

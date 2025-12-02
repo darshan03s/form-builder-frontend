@@ -9,7 +9,7 @@ import {
 import { API_BASE_URL } from '@/config';
 import { useUser } from '@/hooks';
 import type { Form } from '@/types';
-import { Eye } from 'lucide-react';
+import { ExternalLink, Eye } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
@@ -59,6 +59,7 @@ const MyForms = () => {
             <TableHead className="text-center">Base ID</TableHead>
             <TableHead className="text-center">Table ID</TableHead>
             <TableHead className="text-center">See</TableHead>
+            <TableHead className="text-center">Responses</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -70,8 +71,16 @@ const MyForms = () => {
               <TableCell className="font-medium text-center">{form.airtableBaseId}</TableCell>
               <TableCell className="text-center">{form.airtableTableId}</TableCell>
               <TableCell className="text-center">
-                <Link to={`/form/${form._id}`} className='flex items-center justify-center'>
-                  <Eye className='size-4' />
+                <Link to={`/form/${form._id}`} className="flex items-center justify-center">
+                  <Eye className="size-4" />
+                </Link>
+              </TableCell>
+              <TableCell className="text-center">
+                <Link
+                  to={`/form/${form._id}/responses`}
+                  className="flex items-center justify-center"
+                >
+                  <ExternalLink className="size-4" />
                 </Link>
               </TableCell>
             </TableRow>
