@@ -9,7 +9,7 @@ import {
 import { API_BASE_URL } from '@/config';
 import { useUser } from '@/hooks';
 import type { Form } from '@/types';
-import { ExternalLink } from 'lucide-react';
+import { Eye } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
@@ -70,8 +70,8 @@ const MyForms = () => {
               <TableCell className="font-medium text-center">{form.airtableBaseId}</TableCell>
               <TableCell className="text-center">{form.airtableTableId}</TableCell>
               <TableCell className="text-center">
-                <Link to={`/form/${form._id}`}>
-                  <ExternalLink className='size-4' />
+                <Link to={`/form/${form._id}`} className='flex items-center justify-center'>
+                  <Eye className='size-4' />
                 </Link>
               </TableCell>
             </TableRow>

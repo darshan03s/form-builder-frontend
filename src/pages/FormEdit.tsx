@@ -21,7 +21,7 @@ import type {
   Table,
   TableField
 } from '@/types';
-import { ExternalLink, Plus, Trash2 } from 'lucide-react';
+import { Eye, Plus, Trash2 } from 'lucide-react';
 import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { toast } from 'sonner';
@@ -159,7 +159,7 @@ const FormEdit = () => {
               to={`/form/${formId}`}
               className={buttonVariants({ variant: 'outline', size: 'icon-sm' })}
             >
-              <ExternalLink size={4} />
+              <Eye size={4} />
             </Link>
             <Button size={'icon-sm'} onClick={() => setIsNewQuestionModal(true)}>
               <Plus />
