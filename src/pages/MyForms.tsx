@@ -6,7 +6,6 @@ import {
   TableHeader,
   TableRow
 } from '@/components/ui/table';
-import { API_BASE_URL } from '@/config';
 import { useUser } from '@/hooks';
 import type { Form } from '@/types';
 import { ExternalLink, Eye } from 'lucide-react';
@@ -22,7 +21,7 @@ const MyForms = () => {
     if (loadingUser) return;
 
     try {
-      fetch(API_BASE_URL + '/forms', {
+      fetch(import.meta.env.API_BASE_URL + '/forms', {
         headers: {
           'X-User-Id': user.userId
         }

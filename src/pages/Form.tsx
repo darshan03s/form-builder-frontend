@@ -22,7 +22,6 @@ import {
   type TableField
 } from '@/types';
 import { useUser } from '@/hooks';
-import { API_BASE_URL } from '@/config';
 
 function shouldShowQuestion(
   rules: ConditionalRules | null,
@@ -121,7 +120,7 @@ const Form = () => {
 
   useEffect(() => {
     if (loadingUser) return;
-    fetch(API_BASE_URL + `/forms/${formId}`, {
+    fetch(import.meta.env.API_BASE_URL + `/forms/${formId}`, {
       headers: {
         'X-User-Id': user.userId
       }
@@ -213,7 +212,7 @@ const Form = () => {
     });
 
     try {
-      const response = await fetch(`${API_BASE_URL}/forms/${formId}/submit`, {
+      const response = await fetch(`${import.meta.env.API_BASE_URL}/forms/${formId}/submit`, {
         method: 'POST',
         headers: {
           'X-User-Id': user.userId

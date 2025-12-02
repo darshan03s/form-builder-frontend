@@ -3,7 +3,6 @@ import Home from './pages/Home';
 import Header from './components/header';
 import Signin from './pages/Signin';
 import { useEffect } from 'react';
-import { API_BASE_URL } from './config';
 import { useUser } from './hooks';
 import FormEdit from './pages/FormEdit';
 import MyForms from './pages/MyForms';
@@ -14,13 +13,11 @@ const App = () => {
   const navigate = useNavigate();
   const { updateUserContext } = useUser();
 
-  console.log({ API_BASE_URL });
-
   useEffect(() => {
     const userId = localStorage.getItem('formBuilderUserId');
 
     if (userId) {
-      fetch(API_BASE_URL + `/auth/verify`, {
+      fetch(import.meta.env.API_BASE_URL + `/auth/verify`, {
         headers: {
           'X-User-Id': userId
         }

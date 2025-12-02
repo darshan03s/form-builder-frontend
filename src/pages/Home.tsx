@@ -14,7 +14,6 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
-import { API_BASE_URL } from '@/config';
 import { useUser } from '@/hooks';
 import type { Base, Table } from '@/types';
 import { useEffect, useState, type Dispatch, type SetStateAction } from 'react';
@@ -118,7 +117,7 @@ const CreateFormModal = ({ open, setOpen }: CreateFormModalProps) => {
 
   async function handleCreateForm() {
     try {
-      const res = await fetch(API_BASE_URL + '/forms', {
+      const res = await fetch(import.meta.env.API_BASE_URL + '/forms', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

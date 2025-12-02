@@ -10,7 +10,6 @@ import {
   TableRow
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
-import { API_BASE_URL } from '@/config';
 import { useUser } from '@/hooks';
 import { toast } from 'sonner';
 import { Eye } from 'lucide-react';
@@ -42,7 +41,7 @@ const FormResponses = () => {
   useEffect(() => {
     if (loadingUser || !formId) return;
 
-    fetch(`${API_BASE_URL}/forms/${formId}/responses`, {
+    fetch(`${import.meta.env.API_BASE_URL}/forms/${formId}/responses`, {
       headers: {
         'X-User-Id': user.userId
       }

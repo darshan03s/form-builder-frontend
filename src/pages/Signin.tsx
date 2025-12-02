@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-import { API_BASE_URL } from '@/config';
 import { useUser } from '@/hooks';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -31,7 +30,7 @@ const Signin = () => {
   }, [searchParams, navigate]);
 
   const handleSignIn = () => {
-    window.location.href = `${API_BASE_URL}/auth/airtable`;
+    window.location.href = `${import.meta.env.API_BASE_URL}/auth/airtable`;
   };
 
   return (
